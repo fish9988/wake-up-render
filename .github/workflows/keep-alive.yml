@@ -1,0 +1,20 @@
+name: Render保活助手
+
+on:
+  schedule:
+    # 每 14 分钟运行一次 (Render是15分钟睡，卡点运行最省资源)
+    - cron: '*/14 * * * *'
+  workflow_dispatch: # 允许手动运行
+
+jobs:
+  wake-up:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 唤醒服务
+        run: |
+          # ⬇️⬇️⬇️ 请把下面双引号里的地址，改成你要唤醒的 Render 网址 ⬇️⬇️⬇️
+          TARGET_URL="https://gcli2api-cgmp.onrender.com/"
+          
+          echo "正在唤醒: $TARGET_URL"
+          curl -I -m 10 -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64)" $TARGET_URL
+          echo "唤醒任务完成！"
