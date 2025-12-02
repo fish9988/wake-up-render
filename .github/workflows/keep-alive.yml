@@ -2,8 +2,8 @@ name: Render保活助手
 
 on:
   schedule:
-    # 每 14 分钟运行一次 (Render是15分钟睡，卡点运行最省资源)
-    - cron: '*/14 * * * *'
+    # 每 5 分钟运行一次 (Render是15分钟睡，卡点运行最省资源)
+    - cron: '*/5 * * * *'
   workflow_dispatch: # 允许手动运行
 
 jobs:
