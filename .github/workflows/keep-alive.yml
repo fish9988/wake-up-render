@@ -13,7 +13,7 @@ jobs:
       - name: 唤醒服务
         run: |
           # ⬇️⬇️⬇️ 请把下面双引号里的地址，改成你要唤醒的 Render 网址 ⬇️⬇️⬇️
-          TARGET_URL="https://gcli2api-cgmp.onrender.com/"
+          TARGET_URL="https://cli-proxy-api-latest-3n6i.onrender.com"
           
           echo "正在唤醒: $TARGET_URL"
           curl -I -m 10 -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64)" $TARGET_URL
